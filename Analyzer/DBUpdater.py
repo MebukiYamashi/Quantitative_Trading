@@ -11,7 +11,11 @@ import requests
 class DBUpdater:
     def __init__(self):
         """생성자: DB연결 및 종목코드 딕셔너리 생성"""
-        self.conn = pymysql.connect(host='localhost', user='root', passwd='ghost@0@', db='invest', charset='utf8')
+        print("Please identify to user")
+        id = input()
+        print("Please enter your password")
+        passwrd = input()
+        self.conn = pymysql.connect(host='localhost', user = id, passwd = passwrd, db = 'invest', charset = 'utf8')
 
         with self.conn.cursor() as curs:
             sql = """
@@ -194,5 +198,5 @@ class DBUpdater:
         t.start()
 
 if __name__ == '__main__':
-    dbu = DBUpdater()
+    dbu = DBupdater()
     dbu.execute_daily()
