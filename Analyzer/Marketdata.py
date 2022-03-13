@@ -1,3 +1,5 @@
+"""
+"""
 import pandas as pd
 import pymysql
 from datetime import datetime
@@ -47,4 +49,4 @@ class Marketdata:
         start_month = int(start_lst[1])
         start_day = int(start_lst[2])
 
-        if start
+        if sta
