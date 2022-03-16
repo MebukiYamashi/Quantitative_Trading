@@ -1,13 +1,13 @@
-#Plot
+# Plot
 
-##Efficient.py
+## Efficient.py
 
 
 Efficient Frontier Simulation
 it used to function in Marketdata classes, simulated by monte-carlo simulation.  
 The stock ratio outputs a scatter plot using the Numpy built-in random function.
 
-##Bollingerband.py
+## Bollingerband.py
 
 Based on the 20-day moving average of stock prices,  
 consists of the top of the relative high point and the bottom of the relative low point.
