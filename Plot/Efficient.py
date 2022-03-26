@@ -1,7 +1,10 @@
-"""Efficient Frontier Simulation
+"""
+
+Efficient Frontier Simulation
 it used to function in Marketdata classes,
 simulated by monte-carlo simulation.
 The stock ratio outputs a scatter plot using the Numpy built-in random function
+
 """
 
 import numpy as np
