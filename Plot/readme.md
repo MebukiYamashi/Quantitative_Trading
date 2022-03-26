@@ -22,8 +22,8 @@ consists of the top of the relative high point and the bottom of the relative lo
       %b: Indicators of where the stock price is in the band  
           (close_price - lower) / (upper - middle)
 
-     Bandwidth: The width between the upper and lower bowling bands  
-                (upper - lower) / (middle)
+      Bandwidth: The width between the upper and lower bowling bands  
+                 (upper - lower) / (middle)
 
 ## Trendfollowing.py
 
