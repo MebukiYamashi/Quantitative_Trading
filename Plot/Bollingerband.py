@@ -21,7 +21,7 @@ import Analyzer.Marketdata
 mkt = Analyzer.Marketdata.Marketdata()
 print("Please enter company_name, year-month-date to check band")
 name, date = map(str, input().split())
-df = mkt.get_daily_price(''.join(name), '%s'%date)
+df = mkt.get_daily_price(''.join(name), '%s' %date)
 
 df['MA20'] = df['close'].rolling(window=20).mean()  # 20개 종가 표본으로 평균 구하기
 df['stddev'] = df['close'].rolling(window=20).std()  # stddev 칼럼으로 데이터프레임에 추가
