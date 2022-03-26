@@ -34,7 +34,7 @@ Based on the %b indicator and MFI(Money Flow Index)
         Positive | Negative MFI: sums of bull | bear times of Money flow
         Typical Price: H, L, V for a specific period are combined and divided by 3
 
-## Reversals
+## Reversal.py
 
 Buy: When the stock price tags the lower band and the indicator is strong-trended.
 + (%b indicator < 0.05, Intraday Intensity > 0 )
