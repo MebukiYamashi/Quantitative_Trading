@@ -1,6 +1,6 @@
 import pandas as pd
 from bs4 import BeautifulSoup
-import pymysql, calendar, time, json
+import pymysql, calendar, json
 import requests
 from datetime import datetime
 from threading import Timer
