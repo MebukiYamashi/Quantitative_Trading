@@ -1,5 +1,5 @@
 """pseudocode"""
-class DBupdate;
+class DBupdate:
     def __init__(self):
     def __del__(self):
     def read_krx_ticker(self):
