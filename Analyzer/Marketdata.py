@@ -1,10 +1,16 @@
 """
 """
+import io
+import sys
 import pandas as pd
 import pymysql
 from datetime import datetime
 from datetime import timedelta
 import re
+
+input = sys.stdin.readline
+sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'utf-8')
+sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding = 'utf-8')
 
 class Marketdata:
     def __init__(self):
