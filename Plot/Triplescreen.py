@@ -5,14 +5,9 @@ Triple Screen
 
 import matplotlib.pyplot as plt
 import Analyzer.Marketdata
-import sys
-import io
 import matplotlib.dates as mdates
 import Analyzer.Marketdata
 from mpl_finance import candlestick_ohlc
-
-sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'utf-8')
-sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding = 'utf-8')
 
 mkt = Analyzer.Marketdata.Marketdata()
 print("Please enter company_name, year-month-date to check band")
