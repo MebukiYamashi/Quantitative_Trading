@@ -9,7 +9,7 @@ Based on the 20-day moving average of stock prices,
 consists of the top of the relative high point and the bottom of the relative low point.
 using 21 days of OHLCV data, Dataset is used for training and testing at a 7:3 ratio.
 
-The activation function was set to relu, the number of units was set to 21, the number of learning was set to 100, the dropout was set to 10%, the optimization was adam, and the loss function used an average square error (MSE).
+The activation function was set to relu, the number of units was set to 10, the number of learning was set to 100, the dropout was set to 10%, the optimization was adam, and the loss function used an average square error (MSE).
 
 - example of prediction: KRX:000150, Forecast data for March 30
 

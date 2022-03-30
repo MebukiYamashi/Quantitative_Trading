@@ -48,7 +48,7 @@ test_x = np.array(data_x[train_size : len(data_x)])
 test_y = np.array(data_y[train_size : len(data_y)])
 
 # 모델 생성
-model = Sequential()
+model = Sequential() # 순차 모델 생성
 model.add(LSTM(units=10, activation='relu', return_sequences=True, input_shape=(window_size, data_size)))
 model.add(Dropout(0.1))
 model.add(LSTM(units=10, activation='relu'))
