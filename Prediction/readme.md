@@ -5,7 +5,7 @@
 This is an example of stock price forecasting using LSTM (Long/Short Term Memory) using Keras built into tensorflow.
 
 
-Based on the 20-day moving average of stock prices,  
+Based on the 21days OHLCV data of stock prices,  
 consists of the top of the relative high point and the bottom of the relative low point.
 
 using 21 days of OHLCV data, Dataset is used for training and testing at a 7:3 ratio.
