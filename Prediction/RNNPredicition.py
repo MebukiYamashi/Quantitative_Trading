@@ -1,3 +1,6 @@
+"""
+RNN prediction
+"""
 import numpy as np
 import matplotlib.pyplot as plt
 import Analyzer.Marketdata
@@ -6,11 +9,11 @@ from tensorflow.keras import Sequential
 from tensorflow.keras.layers import Dense, LSTM, Dropout
 
 mkt = Analyzer.Marketdata.Marketdata()
-print("Please enter company_name, year-month-date")
+print("Please enter company_name, dates(start, end), 'year-month-date'")
 name, start_date, end_date = map(str, input().split())
 raw_df = mkt.get_daily_price(name, start_date, end_date)
 
-window_size = 10
+window_size = 21
 data_size = 5
 
 def MinMaxScaler(data):
