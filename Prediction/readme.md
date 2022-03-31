@@ -7,7 +7,10 @@ using 21 days of OHLCV data from market prices, dataset is used for training and
 
 The activation function was set to ReLU, the number of units was set to 21(days), the number of learning was set to 100, the dropout was set to 10%, the optimization was adam, and the loss function used an Mean squared error (MSE).
 
-- example of prediction: KRX:000150, Forecast data for March 30
+- example of prediction: KRX: 000150, Forecast data for March 30.
 
 ![img.png](img.png)
 ![img_1.png](img_1.png)
+
+Actual Price: 
+![img_2.png](img_2.png)
