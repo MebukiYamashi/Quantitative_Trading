@@ -47,8 +47,7 @@ class DBUpdater:
 
     def read_krx_code(self):
         """KRX로부터 상장기업 목록 파일을 읽어와서 데이터프레임으로 반환"""
-        url = 'http://kind.krx.co.kr/corpgeneral/corpList.do?method=' \
-              'download&searchType=13'
+        url = 'http://kind.krx.co.kr/corpgeneral/corpList.do?method=' 'download&searchType=13'
         krx = pd.read_html(url, header=0)[0]
         krx = krx[['종목코드', '회사명']]
         krx = krx.rename(columns={'종목코드': 'code', '회사명': 'company'})
@@ -72,13 +71,11 @@ class DBUpdater:
                 for idx in range(len(krx)):
                     code = krx.code.values[idx]
                     company = krx.company.values[idx]
-                    sql = f"REPLACE INTO company_info (code, company, last" \
-                          f"_update) VALUES ('{code}', '{company}', '{today}')"
+                    sql = f"REPLACE INTO company_info (code, company, last" f"_update) VALUES ('{code}', '{company}', '{today}')"
                     curs.execute(sql)
                     self.codes[code] = company
                     tmnow = datetime.now().strftime('%Y-%m-%d %H:%M')
-                    print(f"[{tmnow}] #{idx + 1:04d} REPLACE INTO company_info " \
-                          f"VALUES ({code}, {company}, {today})")
+                    print(f"[{tmnow}] #{idx + 1:04d} REPLACE INTO company_info " f"VALUES ({code}, {company}, {today})")
                 self.conn.commit()
                 print('')
 
@@ -101,8 +98,7 @@ class DBUpdater:
                 response_page = requests.get(page_url, headers={'User-agent': 'Mozilla/5.0'}).text
                 df = df.append(pd.read_html(requests.get(page_url, headers={'User-agent': 'Mozilla/5.0'}).text)[0])
                 tmnow = datetime.now().strftime('%Y-%m-%d %H:%M')
-                print('[{}] {} ({}) : {:04d}/{:04d} pages are downloading...'.format(tmnow, company, code, page, pages),
-                      end="\r")
+                print('[{}] {} ({}) : {:04d}/{:04d} pages are downloading...'.format(tmnow, company, code, page, pages), end="\r")
 
             # df 가공
             df = df.rename(columns={'날짜': 'date', '종가': 'close', '전일비': 'diff', '시가': 'open', '고가': 'high', '저가': 'low',
@@ -123,14 +119,10 @@ class DBUpdater:
         """네이버에서 읽어온 주식 시세를 DB에 REPLACE"""
         with self.conn.cursor() as curs:
             for r in df.itertuples():
-                sql = f"REPLACE INTO daily_price VALUES ('{code}', " \
-                      f"'{r.date}', {r.open}, {r.high}, {r.low}, {r.close}, " \
-                      f"{r.diff}, {r.volume})"
+                sql = f"REPLACE INTO daily_price VALUES ('{code}', " f"'{r.date}', {r.open}, {r.high}, {r.low}, {r.close}, " f"{r.diff}, {r.volume})"
                 curs.execute(sql)
             self.conn.commit()
-            print('[{}] #{:04d} {} ({}) : {} rows > REPLACE INTO daily_' \
-                  'price [OK]'.format(datetime.now().strftime('%Y-%m-%d' \
-                                                              ' %H:%M'), num + 1, company, code, len(df)))
+            print('[{}] #{:04d} {} ({}) : {} rows > REPLACE INTO daily_'  'price [OK]'.format(datetime.now().strftime('%Y-%m-%d' ' %H:%M'), num + 1, company, code, len(df)))
 
     def update_daily_price(self, pages_to_fetch):
         """KRX 상장법인의 주식 시세를 네이버로부터 읽어서 DB에 업데이트"""
